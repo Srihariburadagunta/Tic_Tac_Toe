@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Competition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Tic Tac Toe Competition</h1>
+
+    <!-- Modal for Player names & rounds -->
+    <div id="nameInputModal" class="modal">
+        <div class="modal-content">
+            <h2>Setup Game</h2>
+            <label for="playerXInput">Player X:</label>
+            <input type="text" id="playerXInput" placeholder="Player X Name" maxlength="15" />
+            <label for="playerOInput">Player O:</label>
+            <input type="text" id="playerOInput" placeholder="Player O Name" maxlength="15" />
+            <label for="roundsInput">Number of Rounds:</label>
+            <input type="number" id="roundsInput" placeholder="e.g. 5" min="1" max="20" />
+            <button id="startGameBtn" class="restart-btn">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Game container -->
+    <div id="gameContainer" style="display:none;">
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <span><span id="labelX">Player X</span>: <strong id="scoreX">0</strong></span>
+            <span><span id="labelO">Player O</span>: <strong id="scoreO">0</strong></span>
+            <span>Round: <strong id="roundNumber">1</strong> / <span id="totalRoundsDisplay">5</span></span>
+        </div>
+
+        <!-- Board -->
+        <div id="board" class="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+
+        <!-- Status -->
+        <div id="status" class="status">Player X's turn</div>
+
+        <!-- Buttons -->
+        <button id="nextRoundBtn" class="restart-btn" style="display:none;">Next Round</button>
+        <button id="restartCompetitionBtn" class="restart-btn">Restart Competition</button>
+    </div>
+</div>
+</body>
+</html>
